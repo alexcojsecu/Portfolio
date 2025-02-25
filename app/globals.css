@@ -1,21 +1,259 @@
+/* -----------------------------------------------------------
+   Fonts & Global Resets
+----------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Inter;
+  
+}
+
+/* -----------------------------------------------------------
+   Utility Classes
+----------------------------------------------------------- */
+@layer utilities {
+  /* -----------------------------------------------------------
+     Background Patterns
+  ----------------------------------------------------------- */
+  .bg-pattern {
+    background-image: url('/images/pattern.png'); /* Custom pattern */
+    background-repeat: repeat;
+  }
+
+  /* -----------------------------------------------------------
+     Button Styles
+  ----------------------------------------------------------- */
+  .btn_white {
+    /* Button with white background and green text */
+    @apply border-white bg-white px-8 py-3 text-green-50;
+  }
+  
+  .btn_white_text {
+    /* Button with white background and dark text */
+    @apply border-white bg-white px-8 py-3 text-gray-900;
+  }
+
+  .btn_green {
+    /* Button with green background and white text */
+    @apply border-green-50 bg-green-50 px-8 py-5 text-white;
+  }
+
+  .btn_dark_green {
+    /* Dark green button with transition on hover */
+    @apply bg-green-900 px-8 py-4 text-white transition-all hover:bg-black;
+  }
+
+  .btn_dark_green_outline {
+    /* Dark green button with border and padding */
+    @apply border-gray-200 bg-green-900 px-8 py-5 text-white;
+  }
+
+  /* -----------------------------------------------------------
+     Container Utilities
+  ----------------------------------------------------------- */
+  .max-container {
+    /* Max-width container centered horizontally */
+    @apply mx-auto max-w-[1440px];
+  }
+  
+  .padding-container {
+    /* Padding container for responsive spacing */
+    @apply px-6 lg:px-20 2xl:px-0;
+  }
+
+  /* -----------------------------------------------------------
+     Flex Utilities
+  ----------------------------------------------------------- */
+  .flexCenter {
+    /* Flex container centered in both directions */
+    @apply flex items-center justify-center;
+  }
+
+  .flexBetween {
+    /* Flex container with space between items */
+    @apply flex items-center justify-between;
+  }
+
+  .flexStart {
+    /* Flex container with items aligned at the start */
+    @apply flex items-center justify-start;
+  }
+
+  .flexEnd {
+    /* Flex container with items aligned at the end */
+    @apply flex items-center justify-end;
+  }
+
+  /* -----------------------------------------------------------
+     Typography
+  ----------------------------------------------------------- */
+  /* Regular Fonts */
+  .regular-64 { @apply text-[64px] font-[400] leading-[120%]; }
+  .regular-40 { @apply text-[40px] font-[400] leading-[120%]; }
+  .regular-32 { @apply text-[32px] font-[400]; }
+  .regular-24 { @apply text-[24px] font-[400]; }
+  .regular-20 { @apply text-[20px] font-[400]; }
+  .regular-18 { @apply text-[18px] font-[400]; }
+  .regular-16 { @apply text-[16px] font-[400]; }
+  .regular-14 { @apply text-[14px] font-[400]; }
+
+  /* Medium Fonts */
+  .medium-14 { @apply text-[14px] font-[600]; }
+
+  /* Bold Fonts */
+  .bold-88 { @apply text-[88px] font-[700] leading-[120%]; }
+  .bold-64 { @apply text-[64px] font-[700] leading-[120%]; }
+  .bold-52 { @apply text-[52px] font-[700] leading-[120%]; }
+  .bold-40 { @apply text-[40px] font-[700] leading-[120%]; }
+  .bold-32 { @apply text-[32px] font-[700]; }
+  .bold-20 { @apply text-[20px] font-[700]; }
+  .bold-18 { @apply text-[18px] font-[700]; }
+  .bold-16 { @apply text-[16px] font-[700]; }
+
+  /* -----------------------------------------------------------
+     Section Layouts
+  ----------------------------------------------------------- */
+  /* Hero Section */
+  .hero-map {
+    /* Full-screen background map with absolute positioning */
+    @apply absolute right-0 top-0 h-screen w-screen bg-pattern-2 bg-cover bg-center md:-right-28 xl:-top-60;
+  }
+
+  /* Camp Section */
+  .camp-quote {
+    /* Positioning and size for the camp quote image */
+    @apply absolute -right-6 bottom-4 w-[140px] lg:bottom-10 xl:-right-8 xl:w-[186px] 3xl:right-0;
+  }
+
+  /* Feature Section */
+  .feature-phone {
+    /* Positioning and rotation for feature phone image */
+    @apply absolute top-[13%] z-10 hidden max-w-[1500px] rotate-[15deg] md:-left-16 lg:flex 2xl:left-20;
+  }
+
+  /* Get App Section */
+  .get-app {
+    @apply w-full bg-zinc-900 p-8 text-white; /* Remove overflow-hidden and rounded corners */
+  }
+
+  
+  
+}
+
+/* -----------------------------------------------------------
+   Scrollbar Styles
+----------------------------------------------------------- */
+/* Hide scrollbar for Chrome, Safari, and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;    /* Firefox */
+}
+
+
+/* Navigation */
+/* Gradient background */
+.Navbar {
+  @apply bg-gradient-to-r from-green-900 via-gray-900 to-black text-white;
+}
+
+
+/* Footer */
+.Footer {
+  @apply bg-gray-900 text-white; /* Slightly lighter gray background with white text */
+}
+
+
+/* Custom styles for the information page */
+.info-section {
+  @apply py-12;
+}
+
+.info-section h2 {
+  @apply text-2xl font-bold mb-4;
+}
+
+.info-section p {
+  @apply text-white leading-relaxed;
+}
+
+.info-section ul {
+  @apply list-disc list-inside;
+}
+
+.info-section ul li {
+  @apply text-white mb-2;
+}
+
+/* Grid layout for category and content */
+.grid-layout {
+  @apply grid grid-cols-1 md:grid-cols-[200px_1fr] gap-8;
+}
+
+.category-title {
+  @apply text-2xl font-bold text-white;
+}
+
+/* globals.css */
+
+/* Reusable text styles */
+.text-primary {
+  @apply text-gray-100;
+}
+
+.text-secondary {
+  @apply text-gray-300;
+}
+
+.list-item {
+  @apply list-disc list-inside mb-2 text-gray-100;
+}
+
+/* Section styling */
+.section-title {
+  @apply text-2xl font-bold mb-4 text-white;
+}
+
+.section-content {
+  @apply leading-relaxed text-secondary ;
+}
+
+/* Layout utilities */
+.section-container {
+  @apply grid-layout mb-12;
+}
+
+.skill-category {
+  @apply text-xl font-semibold mb-2 text-white;
+}
+
+.grid-skill {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+
+
+
+/* -----------------------------------------------------------
+   Base Variables
+----------------------------------------------------------- */
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
 }
