@@ -1,7 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['ImperialMobileGallery.b-cdn.net'], // Add your Bunny CDN domain here
+    domains: ['imperialmobilegallery.b-cdn.net'], // ✅ Allow BunnyCDN domain
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'imperialmobilegallery.b-cdn.net', // ✅ Ensure it's lowercase
+      },
+    ],
   },
 };
 

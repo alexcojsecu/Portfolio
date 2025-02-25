@@ -12,11 +12,11 @@ const MarqueeSec = () => {
         <div className="mb-8">
           <Marquee pauseOnHover={true} repeat={2}>
             <div className="flex space-x-12 items-center pr-10">
-              <IconWithText src="/python.png" alt="Python" label="Python" />
-              <IconWithText src="/nodejs.png" alt="Node.js" label="Node.js" />
-              <IconWithText src="/js.png" alt="JavaScript" label="JavaScript" />
-              <IconWithText src="/java.png" alt="Java" label="Java" />
-              <IconWithText src="/tailwind.png" alt="Tailwind" label="Tailwind" />
+              <IconWithText src="https://ImperialMobileGallery.b-cdn.net/python.png" alt="Python" label="Python" />
+              <IconWithText src="https://ImperialMobileGallery.b-cdn.net/nodejs.png" alt="Node.js" label="Node.js" />
+              <IconWithText src="https://ImperialMobileGallery.b-cdn.net/js.png" alt="JavaScript" label="JavaScript" />
+              <IconWithText src="https://ImperialMobileGallery.b-cdn.net/java.png" alt="Java" label="Java" />
+              <IconWithText src="https://ImperialMobileGallery.b-cdn.net/tailwind.png" alt="Tailwind" label="Tailwind" />
             </div>
           </Marquee>
         </div>
@@ -25,11 +25,11 @@ const MarqueeSec = () => {
         <div>
           <Marquee pauseOnHover={true} reverse={true} repeat={2}>
             <div className="flex space-x-12 items-center pr-10">
-              <IconWithText src="/typescript.png" alt="TypeScript" label="TypeScript" />
-              <IconWithText src="/react.png" alt="React" label="React" />
-              <IconWithText src="/html.png" alt="HTML" label="HTML" />
-              <IconWithText src="/css.png" alt="CSS" label="CSS" />
-              <IconWithText src="/c++.png" alt="C++" label="C++" />
+              <IconWithText src="https://ImperialMobileGallery.b-cdn.net/typescript.png" alt="TypeScript" label="TypeScript" />
+              <IconWithText src="https://ImperialMobileGallery.b-cdn.net/react.png" alt="React" label="React" />
+              <IconWithText src="https://ImperialMobileGallery.b-cdn.net/html.png" alt="HTML" label="HTML" />
+              <IconWithText src="https://ImperialMobileGallery.b-cdn.net/css.png" alt="CSS" label="CSS" />
+              <IconWithText src="https://ImperialMobileGallery.b-cdn.net/c++.png" alt="C++" label="C++" />
             </div>
           </Marquee>
         </div>

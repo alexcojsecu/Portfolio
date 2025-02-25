@@ -20,9 +20,9 @@ const Projects = () => {
                 boxShadow: 'inset 0 0 80px rgba(0, 0, 0, 0.8)', // Stronger inner shadow effect
               }}
             >
-              {/* Replaced <img> with Next.js <Image /> */}
+              {/* Next.js <Image /> with BunnyCDN URL */}
               <Image
-                src="https://ImperialMobileGallery.b-cdn.net/HeroPageFR.jpg" // Updated to use Bunny CDN URL
+                src="https://ImperialMobileGallery.b-cdn.net/HeroPageFR.jpg" // BunnyCDN URL
                 alt="Project"
                 layout="fill"
                 objectFit="cover"
