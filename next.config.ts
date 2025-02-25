@@ -1,7 +1,8 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  images: {
+    domains: ['ImperialMobileGallery.b-cdn.net'], // Add your Bunny CDN domain here
+  },
 };
 
-export default nextConfig;
+module.exports = nextConfig;

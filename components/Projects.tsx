@@ -22,7 +22,7 @@ const Projects = () => {
             >
               {/* Replaced <img> with Next.js <Image /> */}
               <Image
-                src="/imperialmobile.jpg" // Ensure this path is correct
+                src="https://ImperialMobileGallery.b-cdn.net/HeroPageFR.jpg" // Updated to use Bunny CDN URL
                 alt="Project"
                 layout="fill"
                 objectFit="cover"
