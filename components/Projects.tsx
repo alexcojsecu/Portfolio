@@ -4,10 +4,8 @@ import Image from 'next/image'; // Import Next.js Image component
 const Projects = () => {
   return (
     <div className="bg-[#181414] text-white py-20 px-6">
-      {/* Container for Title and Image */}
-      <div className="w-full max-w-4xl mx-auto">
-        {/* Title */}
-        <h1 className="text-4xl font-bold mb-4">My Work</h1>
+    <div className="w-full max-w-4xl mx-auto">
+      <h1 className="text-4xl font-bold mb-4">My Work</h1>
 
         {/* Image Container */}
         <div className="relative">
@@ -22,13 +20,13 @@ const Projects = () => {
             >
               {/* Next.js <Image /> with BunnyCDN URL */}
               <Image
-                src="https://ImperialMobileGallery.b-cdn.net/HeroPageFR.jpg" // BunnyCDN URL
-                alt="Project"
-                layout="fill"
-                objectFit="cover"
-                priority // Improves LCP performance
-                className="brightness-100 group-hover:brightness-75 group-hover:scale-105 transition-all duration-300"
-              />
+            src="https://imperialmobilegallery.b-cdn.net/HeroPageFR.jpg"
+            alt="Project"
+            width={800}
+            height={500}
+            priority 
+            className="rounded-lg brightness-100 hover:brightness-75 transition-all duration-300"
+          />
             </div>
 
             {/* Text Overlay (Top Left, Enlarging Downward on Hover) */}
