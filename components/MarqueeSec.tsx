@@ -46,7 +46,7 @@ interface IconWithTextProps {
 
 const IconWithText: React.FC<IconWithTextProps> = ({ src, alt, label }) => (
   <div className="flex items-center space-x-4">
-    <Image src={src} alt={alt} width={64} height={64} className="w-16 h-16" />
+ <Image src={src} alt={alt} width={64} height={64} unoptimized />
     <span className="text-white text-lg font-medium">{label}</span>
   </div>
 );
