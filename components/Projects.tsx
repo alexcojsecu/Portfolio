@@ -1,11 +1,11 @@
-import React from 'react';
-import Image from 'next/image'; // Import Next.js Image component
+import React from "react";
+import Image from "next/image"; // Import Next.js Image component
 
 const Projects = () => {
   return (
     <div className="bg-[#181414] text-white py-20 px-6">
-    <div className="w-full max-w-4xl mx-auto">
-      <h1 className="text-4xl font-bold mb-4">My Work</h1>
+      <div className="w-full max-w-4xl mx-auto">
+        <h1 className="text-4xl font-bold mb-4">My Work</h1>
 
         {/* Image Container */}
         <div className="relative">
@@ -15,28 +15,38 @@ const Projects = () => {
             <div
               className="absolute top-0 left-0 w-full h-full group-hover:bg-black/50 transition-all duration-300"
               style={{
-                boxShadow: 'inset 0 0 80px rgba(0, 0, 0, 0.8)', // Stronger inner shadow effect
+                boxShadow: "inset 0 0 80px rgba(0, 0, 0, 0.8)", // Stronger inner shadow effect
               }}
             >
               {/* Next.js <Image /> with BunnyCDN URL */}
-              <Image
-            src="https://imperialmobilegallery.b-cdn.net/HeroPageFR.jpg"
-            alt="Project"
-            width={800}
-            height={500}
-            priority 
-            className="rounded-lg brightness-100 hover:brightness-75 transition-all duration-300"
-          />
+              <div className="w-full h-full overflow-hidden">
+                <Image
+                  src="https://imperialmobilegallery.b-cdn.net/HeroPageFR.jpg"
+                  alt="Project"
+                  width={800}
+                  height={500}
+                  priority
+                  className="rounded-lg brightness-100 hover:brightness-75 transition-transform duration-500 ease-out group-hover:scale-110"
+                  style={{
+                    objectFit: "cover",
+                    objectPosition: "center",
+                    width: "100%", // Maintain full width within the container
+                    height: "100%", // Maintain the container's height
+                  }}
+                />
+              </div>
             </div>
 
             {/* Text Overlay (Top Left, Enlarging Downward on Hover) */}
             <div className="absolute top-6 left-6 transition-all duration-300 group-hover:translate-y-4">
               <p className="text-3xl font-bold group-hover:text-4xl transition-all duration-300">
                 Project Title
-              </p> {/* Larger Title with Hover Increase */}
+              </p>{" "}
+              {/* Larger Title with Hover Increase */}
               <p className="text-xl text-gray-300 mt-1 group-hover:text-2xl transition-all duration-300">
                 Project description goes here.
-              </p> {/* Larger Description with Hover Increase */}
+              </p>{" "}
+              {/* Larger Description with Hover Increase */}
             </div>
 
             {/* Learn More Button (Appears on Hover) */}
