@@ -43,7 +43,7 @@ const Hero = () => {
 
             {/* Caption */}
             <p className="text-zinc-300">
-              I'm a first year computer science major at UC Merced with interests in machine learning and AI
+              I&apos;m a first year computer science major at UC Merced with interests in machine learning and AI
             </p>
           </div>
         </div>
