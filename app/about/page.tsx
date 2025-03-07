@@ -11,9 +11,9 @@ export default function Home() {
   return (
     <>
       <Hero />
-      
+      <AboutSec />
       <Experience />
-     <AboutSec />
+    
       
     
      

@@ -1,3 +1,6 @@
+import React from 'react';
+import Image from 'next/image'; // Import the Image component from Next.js
+
 const Hero = () => {
   return (
     <section className="bg-[#181414] py-16 px-6">
@@ -12,8 +15,16 @@ const Hero = () => {
             <a href="https://github.com/example" className="p-2 bg-zinc-800 rounded-lg text-white hover:bg-zinc-700 transition-all">
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.77.6-3.36-1.35-3.36-1.35a2.65 2.65 0 0 0-1.1-1.46c-.9-.61.07-.6.07-.6a2.1 2.1 0 0 1 1.55 1.05 2.16 2.16 0 0 0 2.95.84 2.15 2.15 0 0 1 .64-1.35c-2.22-.25-4.56-1.11-4.56-4.93a3.86 3.86 0 0 1 1-2.67 3.6 3.6 0 0 1 .1-2.63s.84-.27 2.75 1.02a9.37 9.37 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02a3.6 3.6 0 0 1 .1 2.63 3.86 3.86 0 0 1 1 2.67c0 3.83-2.34 4.68-4.57 4.93a2.41 2.41 0 0 1 .69 1.87v2.78c0 .26.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
             </a>
-            <a href="https://instagram.com/example" className="p-2 bg-zinc-800 rounded-lg text-white hover:bg-zinc-700 transition-all">
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M7.5 2h9a5.5 5.5 0 0 1 5.5 5.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zM12 5a7 7 0 1 0 7 7 7 7 0 0 0-7-7zm0 11.5A4.5 4.5 0 1 1 16.5 12 4.5 4.5 0 0 1 12 16.5zm4-7.75a1.25 1.25 0 1 1 1.25-1.25A1.25 1.25 0 0 1 16 8.75z"/></svg>
+            {/* Replace Instagram SVG with LinkedIn Image */}
+            <a href="https://linkedin.com/in/example" className="p-2 bg-zinc-800 rounded-lg text-white hover:bg-zinc-700 transition-all">
+              <div className="w-5 h-5 relative">
+                <Image
+                  src="/Linkedin.webp" // Path to the LinkedIn image in the public folder
+                  alt="LinkedIn"
+                  layout="fill" // Ensures the image fills the container
+                  objectFit="contain" // Ensures the image fits within the container
+                />
+              </div>
             </a>
           </div>
 
@@ -32,7 +43,7 @@ const Hero = () => {
 
             {/* Caption */}
             <p className="text-zinc-300">
-              I&apos;m a Full-Stack Developer with a passion for building interactive web experiences.
+              I'm a first year computer science major at UC Merced with interests in machine learning and AI
             </p>
           </div>
         </div>

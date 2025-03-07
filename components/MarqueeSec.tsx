@@ -16,6 +16,7 @@ const MarqueeSec = () => {
               <IconWithText src="/js.png" alt="JavaScript" label="JavaScript" />
               <IconWithText src="/java.png" alt="Java" label="Java" />
               <IconWithText src="/tailwind.png" alt="Tailwind" label="Tailwind" />
+              <IconWithText src="/R.png" alt="R" label="R" />
             </div>
           </Marquee>
         </div>
@@ -29,6 +30,7 @@ const MarqueeSec = () => {
               <IconWithText src="/html.png" alt="HTML" label="HTML" />
               <IconWithText src="/css.png" alt="CSS" label="CSS" />
               <IconWithText src="/c++.png" alt="C++" label="C++" />
+              <IconWithText src="/Julia.png" alt="Julia" label="Julia" />
             </div>
           </Marquee>
         </div>
@@ -45,10 +47,9 @@ interface IconWithTextProps {
 
 const IconWithText: React.FC<IconWithTextProps> = ({ src, alt, label }) => (
   <div className="flex items-center space-x-4">
-    <img src={src} alt={alt} className="w-16 h-16" />
+    <img src={src} alt={alt} className="h-16 w-auto" /> {/* Set height and auto width */}
     <span className="text-white text-lg font-medium">{label}</span>
   </div>
 );
-
 
 export default MarqueeSec;

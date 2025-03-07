@@ -15,20 +15,22 @@ const Experience = () => {
           <div className="relative">
             {/* Circle Marker (Adjustable position) */}
             <div className="absolute left-[-62px] top-1/2 transform -translate-y-1/2 w-5 h-5 bg-teal-500 border-2 border-white rounded-full z-10"></div>
-            <h3 className="text-xl font-bold text-white">Full-Stack Web Developer</h3>
+            <h3 className="text-xl font-bold text-white">Founder and Owner of Imperial Mobile Detail</h3>
           </div>
-          <p className="text-sm text-zinc-400">October 2023 - March 2024</p>
+          <p className="text-sm text-zinc-400">October 2021 - Currently</p>
           <p className="text-zinc-300 mt-2">
             Adding features to an already built page. Minor website modifications. The project was ended in March 2024.
+            <a href="https://imperialmobile.org" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline ml-1">Visit ImperialMobile</a>
           </p>
+          
         </div>
 
         {/* Pixelnite */}
         <div className="relative pl-20 mb-12">
-          <h2 className="text-lg font-bold text-teal-400">Pixelnite</h2>
+          <h2 className="text-lg font-bold text-teal-400">Designer Clothing Collector</h2>
           <div className="relative">
             <div className="absolute left-[-62px] top-1/2 transform -translate-y-1/2 w-5 h-5 bg-teal-500 border-2 border-white rounded-full z-10"></div>
-            <h3 className="text-xl font-bold text-white">Full-Stack Web Developer</h3>
+            <h3 className="text-xl font-bold text-white">Designer Clothing Collector</h3>
           </div>
           <p className="text-sm text-zinc-400">July 2024</p>
           <p className="text-zinc-300 mt-2">
@@ -39,10 +41,10 @@ const Experience = () => {
 
         {/* OpenSource */}
         <div className="relative pl-20">
-          <h2 className="text-lg font-bold text-teal-400">OpenSource</h2>
+          <h2 className="text-lg font-bold text-teal-400">Machine Learning and AI</h2>
           <div className="relative">
             <div className="absolute left-[-62px] top-1/2 transform -translate-y-1/2 w-5 h-5 bg-teal-500 border-2 border-white rounded-full z-10"></div>
-            <h3 className="text-xl font-bold text-white">Contributor</h3>
+            <h3 className="text-xl font-bold text-white">Machine Learning and AI</h3>
           </div>
           <p className="text-sm text-zinc-400">May 2023 - Present</p>
           <p className="text-zinc-300 mt-2">

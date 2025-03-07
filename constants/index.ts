@@ -3,8 +3,8 @@ export const NAV_LINKS = [
     { href: '/about', key: 'about', label: 'About' },
     { href: '/', key: 'how_hilink_work', label: 'Portfolio' },
     { href: '/projects', key: 'projects', label: 'Projects' },
-    { href: '/', key: 'pricing ', label: 'Qualifications ' },
-    { href: '/', key: 'contact_us', label: 'Contact Me' },
+    { href: '/qualifications', key: 'qualifications ', label: 'Qualifications ' },
+    { href: '/contact', key: 'contact', label: 'Contact Me' },
   ];
   
   // CAMP SECTION
