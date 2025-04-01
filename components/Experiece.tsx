@@ -11,7 +11,7 @@ const Experience = () => {
 
         {/* QPlay.cz */}
         <div className="relative pl-20 mb-12">
-          <h2 className="text-lg font-bold text-teal-400">QPlay.cz</h2>
+          <h2 className="text-lg font-bold text-teal-400">Imperial Mobile</h2>
           <div className="relative">
             {/* Circle Marker (Adjustable position) */}
             <div className="absolute left-[-62px] top-1/2 transform -translate-y-1/2 w-5 h-5 bg-teal-500 border-2 border-white rounded-full z-10"></div>
@@ -21,6 +21,22 @@ const Experience = () => {
           <p className="text-zinc-300 mt-2">
             Adding features to an already built page. Minor website modifications. The project was ended in March 2024.
             <a href="https://imperialmobile.org" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline ml-1">Visit ImperialMobile</a>
+          </p>
+          
+        </div>
+
+        {/* TechLiberate */}
+        <div className="relative pl-20 mb-12">
+          <h2 className="text-lg font-bold text-teal-400">TechLiberate</h2>
+          <div className="relative">
+            {/* Circle Marker (Adjustable position) */}
+            <div className="absolute left-[-62px] top-1/2 transform -translate-y-1/2 w-5 h-5 bg-teal-500 border-2 border-white rounded-full z-10"></div>
+            <h3 className="text-xl font-bold text-white">Software Engineer</h3>
+          </div>
+          <p className="text-sm text-zinc-400">March 2025 - Currently  alexandru@techliberate.com</p>
+          <p className="text-zinc-300 mt-2">
+            Adding features to an already built page. Minor website modifications
+            <a href="https://techliberate.com/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline ml-1">Visit TechLiberate</a>
           </p>
           
         </div>
@@ -53,6 +69,9 @@ const Experience = () => {
           </p>
         </div>
       </div>
+
+
+    
     </section>
   );
 };
