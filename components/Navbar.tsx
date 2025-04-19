@@ -13,7 +13,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="bg-[#181414]"> {/* Wrapper div to extend the background color */}
+    <div className="bg-black"> {/* Wrapper div to extend the background color */}
       <nav className="flexBetween max-container padding-container relative z-30 py-5">
         {/* Your Name */}
         <Link href="/">

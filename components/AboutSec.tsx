@@ -2,7 +2,7 @@ import React from 'react';
 
 const AboutSec = () => {
   return (
-    <div className="bg-[#181414] h-auto">
+    <div className="bg-black h-auto">
       <div className="max-container padding-container info-section px-10 lg:px-[300px] py-10">
         <h1 className="text-white text-3xl font-bold mb-6">About Me</h1>
         <p className="text-gray-300 text-lg leading-relaxed mb-6">

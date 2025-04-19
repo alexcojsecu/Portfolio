@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const License = () => {
   return (
-    <div className="text-center py-6 md:py-12 bg-[#181414] text-white">
+    <div className="text-center py-6 md:py-12 bg-black text-white">
       {/* Experience Section */}
       <div>
         {/* Large Centered Title */}

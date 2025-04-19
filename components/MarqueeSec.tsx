@@ -3,7 +3,7 @@ import { Marquee } from '@/components/magicui/marquee'; // Ensure the path is co
 
 const MarqueeSec = () => {
   return (
-    <section className="bg-[#181414] py-20">
+    <section className="bg-black py-20">
       <div className="max-w-4xl mx-auto px-6">
         <h2 className="text-3xl font-bold text-white mb-6">What I Work With</h2>
 

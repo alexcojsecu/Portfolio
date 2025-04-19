@@ -2,7 +2,7 @@ import React from 'react';
 
 const Experience = () => {
   return (
-    <section className="bg-[#181414] py-20 px-6">
+    <section className="bg-black py-20 px-6">
       <h1 className="text-4xl font-bold text-white mb-12 text-center">Skills & Experience</h1>
 
       <div className="relative max-w-4xl mx-auto">
@@ -69,9 +69,6 @@ const Experience = () => {
           </p>
         </div>
       </div>
-
-
-    
     </section>
   );
 };

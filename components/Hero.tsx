@@ -3,7 +3,7 @@ import Image from 'next/image'; // Import the Image component from Next.js
 
 const Hero = () => {
   return (
-    <section className="bg-[#181414] py-16 px-6">
+    <section className="bg-black py-16 px-6">
       {/* Wrapper div for scaling */}
       <div className="scale-110 transform origin-top"> {/* Adjust scale value as needed */}
         <div className="relative w-full max-w-3xl mx-auto border border-zinc-700 rounded-2xl p-6">
