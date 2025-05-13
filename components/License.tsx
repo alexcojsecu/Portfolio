@@ -1,177 +1,226 @@
-import React from 'react';
+"use client"; // Required for using hooks
+
+import React, { useEffect, useState } from 'react'; // Import hooks
 import Image from 'next/image';
 
 const License = () => {
+  // State to trigger the animation for underlines
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    // Set isLoaded to true after the component mounts to trigger animations
+    const timer = setTimeout(() => setIsLoaded(true), 100); // Small delay to ensure mount
+    return () => clearTimeout(timer); // Cleanup timer
+  }, []); // Empty dependency array ensures this runs only once on mount
+
   return (
-    <div className="text-center py-6 md:py-12 bg-black text-white">
+    // Main page container with background and overall vertical padding
+    <div className="min-h-screen bg-black text-white py-12 md:py-20 px-4 sm:px-6">
+
       {/* Experience Section */}
-      <div>
-        {/* Large Centered Title */}
-        <h1 className="text-4xl md:text-5xl font-bold mb-6 md:mb-10">Experience</h1>
-
-        {/* Certificate Section 1: Machine Learning Specialization */}
-        <div className="flex flex-col md:flex-row items-center justify-start gap-4 md:gap-10 max-w-6xl mx-auto px-4 md:px-32 mb-6 md:mb-10">
-          {/* Certificate Image */}
-          <div className="w-16 h-16 md:w-24 md:h-24 relative">
-            <Image
-              src="/Certificate1.jpg"
-              alt="Stanford Online Course Certificate"
-              layout="fill"
-              objectFit="cover"
-              className="rounded-none" // Removed rounded edges
-            />
-          </div>
-
-          {/* Certificate Text */}
-          <div className="text-left">
-            <p className="text-xl md:text-2xl font-bold">Machine Learning Specialization</p>
-            <p className="text-lg md:text-xl">Machine Learning Specialization</p>
-            <p className="text-base md:text-lg">DeepLearning.AI, Stanford University</p>
-            <p className="text-sm md:text-base text-gray-400">
-              Issued Jan 2025 •{' '}
-              <a
-                href="https://coursera.org/share/1294a9bf9c79fb5dce7b99cbcf1c5ae9" // Updated href
-                target="_blank" // Opens the link in a new tab
-                rel="noopener noreferrer" // Security best practice for target="_blank"
-                className="text-blue-500 hover:text-blue-400 transition-colors"
-              >
-                View Certificate
-              </a>
-            </p>
-          </div>
+      <section className="max-w-5xl mx-auto mb-16 md:mb-24">
+        {/* Centered Title with Underline */}
+        <div className="text-center mb-10 md:mb-14">
+          <h1 className="text-3xl md:text-5xl font-bold relative inline-block">
+            Experience
+            <span
+              className={`absolute left-0 bottom-0 h-1 bg-white -mb-1 md:-mb-2 transition-all duration-[2000ms] ease-in-out ${
+                isLoaded ? 'w-full' : 'w-0'
+              }`}
+            ></span>
+          </h1>
         </div>
 
-        {/* Certificate Section 2: edX Verified Certificate for Machine Learning and AI with Python */}
-        <div className="flex flex-col md:flex-row items-center justify-start gap-4 md:gap-10 max-w-6xl mx-auto px-4 md:px-32 mb-6 md:mb-10">
-          {/* Certificate Image */}
-          <div className="w-16 h-16 md:w-24 md:h-24 relative">
-            <Image
-              src="/Icon2.png"
-              alt="edX Verified Certificate for Machine Learning and AI with Python"
-              layout="fill"
-              objectFit="cover"
-              className="rounded-none" // Removed rounded edges
-            />
+        {/* Container for all experience items, provides vertical spacing between them */}
+        <div className="space-y-8 md:space-y-10">
+          {/* Certificate Section: TechLiberate */}
+          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 md:gap-6">
+            <div className="w-16 h-16 md:w-24 md:h-24 relative flex-shrink-0">
+              <Image
+                src="/TechLiberate.jpg"
+                alt="TechLiberate Logo"
+                fill={true}
+                className="object-cover rounded-none"
+              />
+            </div>
+            <div className="text-center sm:text-left flex-1">
+              <p className="text-xl md:text-2xl font-bold">Software Engineer</p>
+              <p className="text-base md:text-xl">Backend Software Implementor</p>
+              <p className="text-sm md:text-lg">AI Consultant Firm, TechLiberate.com</p>
+              <p className="text-xs md:text-base text-gray-400">
+                Issued Nov 2025 •{' '}
+                <a
+                  href="mailto:alexandru@techliberate.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-500 hover:text-blue-400 transition-colors"
+                >
+                  alexandru@techliberate.com
+                </a>
+              </p>
+            </div>
           </div>
 
-          {/* Certificate Text */}
-          <div className="text-left">
-            <p className="text-xl md:text-2xl font-bold">edX Verified Certificate for Machine Learning and AI with Python</p>
-            <p className="text-lg md:text-xl">Machine Learning and AI with Python</p>
-            <p className="text-base md:text-lg">edX, Harvard College</p>
-            <p className="text-sm md:text-base text-gray-400">
-              Issued March 2025 •{' '}
-              <a
-                href="https://courses.edx.org/certificates/4d80002fa63d4ae689f90391098faa0a" // Updated href
-                target="_blank" // Opens the link in a new tab
-                rel="noopener noreferrer" // Security best practice for target="_blank"
-                className="text-blue-500 hover:text-blue-400 transition-colors"
-              >
-                View Certificate
-              </a>
-            </p>
+          {/* Certificate Section 1: Machine Learning Specialization */}
+          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 md:gap-6">
+            <div className="w-16 h-16 md:w-24 md:h-24 relative flex-shrink-0">
+              <Image
+                src="/Certificate1.jpg"
+                alt="Stanford Online Course Certificate"
+                fill={true}
+                className="object-cover rounded-none"
+              />
+            </div>
+            <div className="text-center sm:text-left flex-1">
+              <p className="text-xl md:text-2xl font-bold">Machine Learning Specialization</p>
+              <p className="text-base md:text-xl">Machine Learning Specialization</p>
+              <p className="text-sm md:text-lg">DeepLearning.AI, Stanford University</p>
+              <p className="text-xs md:text-base text-gray-400">
+                Issued Jan 2025 •{' '}
+                <a
+                  href="https://coursera.org/share/1294a9bf9c79fb5dce7b99cbcf1c5ae9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-500 hover:text-blue-400 transition-colors"
+                >
+                  View Certificate
+                </a>
+              </p>
+            </div>
+          </div>
+
+          {/* Certificate Section 2: edX Verified Certificate */}
+          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 md:gap-6">
+            <div className="w-16 h-16 md:w-24 md:h-24 relative flex-shrink-0">
+              <Image
+                src="/Icon2.png"
+                alt="edX Verified Certificate for Machine Learning and AI with Python"
+                fill={true}
+                className="object-cover rounded-none"
+              />
+            </div>
+            <div className="text-center sm:text-left flex-1">
+              <p className="text-xl md:text-2xl font-bold">
+                edX Verified Certificate for Machine Learning and AI with Python
+              </p>
+              <p className="text-base md:text-xl">Machine Learning and AI with Python</p>
+              <p className="text-sm md:text-lg">edX, Harvard College</p>
+              <p className="text-xs md:text-base text-gray-400">
+                Issued March 2025 •{' '}
+                <a
+                  href="https://courses.edx.org/certificates/4d80002fa63d4ae689f90391098faa0a"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-500 hover:text-blue-400 transition-colors"
+                >
+                  View Certificate
+                </a>
+              </p>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Courses Section */}
-      <div className="mt-8 md:mt-12">
-        {/* Large Centered Title */}
-        <h1 className="text-4xl md:text-5xl font-bold mb-6 md:mb-10">Courses</h1>
-
-        {/* Course 1 */}
-        <div className="flex flex-col md:flex-row items-center justify-start gap-4 md:gap-10 max-w-6xl mx-auto px-4 md:px-32 mb-6 md:mb-10">
-          {/* Certificate Image */}
-          <div className="w-16 h-16 md:w-24 md:h-24 relative">
-            <Image
-              src="/DLIcon.png"
-              alt="Stanford Online Course Certificate"
-              layout="fill"
-              objectFit="cover"
-              className="rounded-none" // Removed rounded edges
-            />
-          </div>
-
-          {/* Certificate Text */}
-          <div className="text-left flex-1">
-            <p className="text-xl md:text-2xl font-bold">Supervised Machine Learning: Regression and Classification</p>
-            <p className="text-base md:text-lg">DeepLearning.AI, Stanford University</p>
-            <p className="text-sm md:text-base text-gray-400">
-              Issued Dec 2024 •{' '}
-              <a
-                href="https://coursera.org/share/1294a9bf9c79fb5dce7b99cbcf1c5ae9" // Updated href
-                target="_blank" // Opens the link in a new tab
-                rel="noopener noreferrer" // Security best practice for target="_blank"
-                className="text-blue-500 hover:text-blue-400 transition-colors"
-              >
-                View Certificate
-              </a>
-            </p>
-          </div>
+      <section className="max-w-5xl mx-auto">
+        <div className="text-center mb-10 md:mb-14">
+          <h1 className="text-3xl md:text-5xl font-bold relative inline-block">
+            Courses
+            <span
+              className={`absolute left-0 bottom-0 h-1 bg-white -mb-1 md:-mb-2 transition-all duration-[2000ms] ease-in-out ${
+                isLoaded ? 'w-full' : 'w-0'
+              }`}
+            ></span>
+          </h1>
         </div>
 
-        {/* Course 2 */}
-        <div className="flex flex-col md:flex-row items-center justify-start gap-4 md:gap-10 max-w-6xl mx-auto px-4 md:px-32 mb-6 md:mb-10">
-          {/* Certificate Image */}
-          <div className="w-16 h-16 md:w-24 md:h-24 relative">
-            <Image
-              src="/DLIcon.png"
-              alt="Stanford Online Course Certificate"
-              layout="fill"
-              objectFit="cover"
-              className="rounded-none" // Removed rounded edges
-            />
+        <div className="space-y-8 md:space-y-10">
+          {/* Course 1 */}
+          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 md:gap-6">
+            <div className="w-16 h-16 md:w-24 md:h-24 relative flex-shrink-0">
+              <Image
+                src="/DLIcon.png"
+                alt="DeepLearning AI Course Icon"
+                fill={true}
+                className="object-cover rounded-none"
+              />
+            </div>
+            <div className="text-center sm:text-left flex-1">
+              <p className="text-xl md:text-2xl font-bold">
+                Supervised Machine Learning: Regression and Classification
+              </p>
+              <p className="text-sm md:text-lg">DeepLearning.AI, Stanford University</p>
+              <p className="text-xs md:text-base text-gray-400">
+                Issued Dec 2024 •{' '}
+                <a
+                  href="https://coursera.org/share/1294a9bf9c79fb5dce7b99cbcf1c5ae9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-500 hover:text-blue-400 transition-colors"
+                >
+                  View Certificate
+                </a>
+              </p>
+            </div>
           </div>
 
-          {/* Certificate Text */}
-          <div className="text-left flex-1">
-            <p className="text-xl md:text-2xl font-bold">Advanced Learning Algorithms</p>
-            <p className="text-base md:text-lg">DeepLearning.AI, Stanford University</p>
-            <p className="text-sm md:text-base text-gray-400">
-              Issued Jan 2025 •{' '}
-              <a
-                href="https://coursera.org/share/1294a9bf9c79fb5dce7b99cbcf1c5ae9" // Updated href
-                target="_blank" // Opens the link in a new tab
-                rel="noopener noreferrer" // Security best practice for target="_blank"
-                className="text-blue-500 hover:text-blue-400 transition-colors"
-              >
-                View Certificate
-              </a>
-            </p>
+          {/* Course 2 */}
+          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 md:gap-6">
+            <div className="w-16 h-16 md:w-24 md:h-24 relative flex-shrink-0">
+              <Image
+                src="/DLIcon.png"
+                alt="DeepLearning AI Course Icon"
+                fill={true}
+                className="object-cover rounded-none"
+              />
+            </div>
+            <div className="text-center sm:text-left flex-1">
+              <p className="text-xl md:text-2xl font-bold">Advanced Learning Algorithms</p>
+              <p className="text-sm md:text-lg">DeepLearning.AI, Stanford University</p>
+              <p className="text-xs md:text-base text-gray-400">
+                Issued Jan 2025 •{' '}
+                <a
+                  href="https://coursera.org/share/1294a9bf9c79fb5dce7b99cbcf1c5ae9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-500 hover:text-blue-400 transition-colors"
+                >
+                  View Certificate
+                </a>
+              </p>
+            </div>
+          </div>
+
+          {/* Course 3 */}
+          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 md:gap-6">
+            <div className="w-16 h-16 md:w-24 md:h-24 relative flex-shrink-0">
+              <Image
+                src="/DLIcon.png"
+                alt="DeepLearning AI Course Icon"
+                fill={true}
+                className="object-cover rounded-none"
+              />
+            </div>
+            <div className="text-center sm:text-left flex-1">
+              <p className="text-xl md:text-2xl font-bold">
+                Unsupervised Learning, Recommenders, Reinforcement Learning
+              </p>
+              <p className="text-sm md:text-lg">DeepLearning.AI, Stanford University</p>
+              <p className="text-xs md:text-base text-gray-400">
+                Issued Jan 2025 •{' '}
+                <a
+                  href="https://coursera.org/share/1294a9bf9c79fb5dce7b99cbcf1c5ae9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-500 hover:text-blue-400 transition-colors"
+                >
+                  View Certificate
+                </a>
+              </p>
+            </div>
           </div>
         </div>
-
-        {/* Course 3 */}
-        <div className="flex flex-col md:flex-row items-center justify-start gap-4 md:gap-10 max-w-6xl mx-auto px-4 md:px-32 mb-6 md:mb-10">
-          {/* Certificate Image */}
-          <div className="w-16 h-16 md:w-24 md:h-24 relative">
-            <Image
-              src="/DLIcon.png"
-              alt="Stanford Online Course Certificate"
-              layout="fill"
-              objectFit="cover"
-              className="rounded-none" // Removed rounded edges
-            />
-          </div>
-
-          {/* Certificate Text */}
-          <div className="text-left flex-1">
-            <p className="text-xl md:text-2xl font-bold">Unsupervised Learning, Recommenders, Reinforcement Learning</p>
-            <p className="text-base md:text-lg">DeepLearning.AI, Stanford University</p>
-            <p className="text-sm md:text-base text-gray-400">
-              Issued Jan 2025 •{' '}
-              <a
-                href="https://coursera.org/share/1294a9bf9c79fb5dce7b99cbcf1c5ae9" // Updated href
-                target="_blank" // Opens the link in a new tab
-                rel="noopener noreferrer" // Security best practice for target="_blank"
-                className="text-blue-500 hover:text-blue-400 transition-colors"
-              >
-                View Certificate
-              </a>
-            </p>
-          </div>
-        </div>
-      </div>
+      </section>
     </div>
   );
 };

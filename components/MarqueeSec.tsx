@@ -1,14 +1,29 @@
-import React from 'react';
+"use client";
+
+import React, { useEffect, useState } from 'react';
 import { Marquee } from '@/components/magicui/marquee'; // Ensure the path is correct
 
 const MarqueeSec = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
+
   return (
     <section className="bg-black py-20">
       <div className="max-w-4xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-white mb-6">What I Work With</h2>
+        {/* MODIFIED: Changed mb-6 to mb-12 to add more space below the heading */}
+        <div className="flex justify-center mb-12">
+          <h2 className="text-4xl font-bold text-white relative inline-block">
+            What I Work With
+            {/* Underline with original 1-second duration from user's code */}
+            <span className={`absolute left-0 bottom-0 h-1 bg-white -mb-2 transition-all duration-1000 ease-in-out ${isLoaded ? 'w-full' : 'w-0'}`}></span>
+          </h2>
+        </div>
 
         {/* First Marquee */}
-        <div className="mb-8">
+        <div className="mb-8"> {/* This margin adds space between the two marquees */}
           <Marquee pauseOnHover={true} repeat={2}>
             <div className="flex space-x-12 items-center pr-10">
               <IconWithText src="/python.png" alt="Python" label="Python" />
