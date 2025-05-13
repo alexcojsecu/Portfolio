@@ -44,7 +44,7 @@ const Projects = () => {
     {
       title: "Python Deepfake",
       description: "In the process..",
-      image: "",
+      image: "/placeholder-image.png", // Added a placeholder if image can be empty
       url: "https://python-deepfake-project.com",
       techIcons: [
         { name: "React", src: "/react.png" },
@@ -87,7 +87,7 @@ const Projects = () => {
     <div className="bg-black text-white py-20 px-6">
       <div className="w-full max-w-4xl mx-auto">
         <motion.h1
-          className="text-5xl font-bold mb-12"
+          className="text-5xl font-bold mb-12 text-center md:text-left"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -106,8 +106,7 @@ const Projects = () => {
               viewport={{ once: true, margin: "-100px" }}
               variants={container}
             >
-              {/* Project Title and Description - Will be visible in portrait mode */}
-              <motion.div 
+              <motion.div
                 className="mb-4 hidden portrait:block text-center transition-all duration-300"
                 variants={item}
               >
@@ -119,42 +118,55 @@ const Projects = () => {
                 </p>
               </motion.div>
 
-              {/* Project Container - Adjusted padding for portrait mode */}
               <motion.div
-                className="group relative overflow-hidden rounded-lg w-full 
+                className="group relative overflow-visible rounded-lg w-full 
                            portrait:px-4 md:portrait:px-8 transition-all duration-300"
-                style={{ aspectRatio: "5 / 3" }}
                 variants={item}
               >
-                {/* Image Wrapper */}
                 <div
-                  className="absolute top-0 left-0 w-full h-full group-hover:bg-black/50 
-                             transition-all duration-300"
+                  className="relative w-full h-full group-hover:bg-black/50 
+                             transition-all duration-300 rounded-lg overflow-hidden"
                   style={{
+                    aspectRatio: "5 / 3",
                     boxShadow: "inset 0 0 80px rgba(0, 0, 0, 0.8)",
                   }}
                 >
-                  <div className="w-full h-full overflow-hidden">
+                  {project.image ? (
                     <Image
                       src={project.image}
                       alt={project.title}
                       width={800}
                       height={500}
-                      priority
-                      className="rounded-lg brightness-100 hover:brightness-75 
-                               transition-transform duration-500 ease-out 
-                               group-hover:scale-110"
+                      priority={projectIndex < 2}
+                      className="brightness-100 hover:brightness-75 
+                                 transition-transform duration-500 ease-out 
+                                 group-hover:scale-110"
                       style={{
                         objectFit: "cover",
                         objectPosition: "center",
                         width: "100%",
                         height: "100%",
+                        borderRadius: "0.5rem",
                       }}
                     />
-                  </div>
+                  ) : (
+                    <div className="w-full h-full bg-gray-700 flex items-center justify-center rounded-lg">
+                      <p className="text-gray-400">Image coming soon</p>
+                    </div>
+                  )}
                 </div>
 
-                {/* Text Overlay - Hidden in portrait mode */}
+                {project.image && (
+                  <motion.span
+                    className="absolute h-1 bg-white left-1/2 transform -translate-x-1/2"
+                    style={{ bottom: "-12px" }} 
+                    initial={{ width: 0 }}
+                    whileInView={{ width: "100%" }} // CHG: "80%" to "100%"
+                    viewport={{ once: true, amount: 0.8 }} 
+                    transition={{ duration: 1, ease: "easeInOut" }}
+                  />
+                )}
+
                 <motion.div
                   className="absolute top-6 left-6 transition-all duration-300 
                              group-hover:translate-y-4 portrait:hidden"
@@ -168,7 +180,6 @@ const Projects = () => {
                   </p>
                 </motion.div>
 
-                {/* Learn More Button */}
                 <motion.div
                   className="absolute bottom-8 sm:bottom-6 left-6 opacity-0 transition-all duration-300 
                              group-hover:opacity-100"
@@ -185,10 +196,9 @@ const Projects = () => {
                   </Link>
                 </motion.div>
 
-                {/* Technology Icons */}
                 <motion.div
                   className="absolute bottom-8 sm:bottom-6 right-6 flex gap-3 md:gap-4 transition-all duration-300"
-                  variants={container}
+                  variants={item} // Changed from container to item for individual animation
                 >
                   {project.techIcons.map((icon, index) => (
                     <motion.div
@@ -197,7 +207,7 @@ const Projects = () => {
                                 translate-y-10 opacity-0 group-hover:translate-y-0 
                                 group-hover:opacity-100"
                       style={{ transitionDelay: `${index * 100}ms` }}
-                      variants={item}
+                      variants={item} 
                     >
                       <Image
                         src={icon.src}
