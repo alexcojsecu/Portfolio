@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
+import Image from 'next/image'; // Import Image component from next/image
 import { Marquee } from '@/components/magicui/marquee'; // Ensure the path is correct
 
 const MarqueeSec = () => {
@@ -62,7 +63,7 @@ interface IconWithTextProps {
 
 const IconWithText: React.FC<IconWithTextProps> = ({ src, alt, label }) => (
   <div className="flex items-center space-x-4">
-    <img src={src} alt={alt} className="h-16 w-auto" /> {/* Set height and auto width */}
+    <Image src={src} alt={alt} width={64} height={64} /> {/* Set width and height for Image */}
     <span className="text-white text-lg font-medium">{label}</span>
   </div>
 );

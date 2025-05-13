@@ -40,9 +40,9 @@ const AboutSec = () => {
           <div className="bg-gray-900 bg-opacity-40 p-6 md:p-8 rounded-lg border-l-4 border-purple-500 transform transition-all duration-300 hover:translate-x-1 hover:shadow-lg">
             <p className="text-gray-300 text-base md:text-lg leading-relaxed">
               I built a neural network to classify MNIST datasets, which taught me the importance of well-structured data.
-              While my experience is self-driven, I'm eager to apply these skills to a meaningful medical cause.
+              While my experience is self-driven, I&apos;m eager to apply these skills to a meaningful medical cause.
               My recent coursework in Introduction to Biology has also sparked my curiosity about the intersection
-              of technology and healthcare, and I'm excited to explore this further.
+              of technology and healthcare, and I&apos;m excited to explore this further.
             </p>
           </div>
         </div>
