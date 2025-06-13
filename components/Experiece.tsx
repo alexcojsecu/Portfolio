@@ -47,6 +47,21 @@ const Experience = () => {
           </p>
         </div>
 
+        {/* Imperial Mobile */}
+        <div className="relative pl-20 mb-12">
+          <h2 className="text-lg font-bold text-teal-400">Programmatic.it</h2>
+          <div className="relative">
+            {/* Circle Marker */}
+            <div className="absolute left-[-62px] top-1/2 transform -translate-y-1/2 w-5 h-5 bg-teal-500 border-2 border-white rounded-full z-10"></div>
+            <h3 className="text-xl font-bold text-white">Founder and Owner of Programmatic</h3>
+          </div>
+          <p className="text-sm text-zinc-400">October 2025 - Currently</p>
+          <p className="text-zinc-300 mt-2">
+          Our AI-powered automation solutions are tailored to boost your efficiency, drive data-backed decisions, and give you a competitive edge
+            <a href="https://programmatic.it.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline ml-1">Visit Programmatic</a>
+          </p>
+        </div>
+
         {/* TechLiberate */}
         <div className="relative pl-20 mb-12">
           <h2 className="text-lg font-bold text-teal-400">TechLiberate</h2>
