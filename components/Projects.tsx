@@ -7,6 +7,7 @@ import Link from "next/link";
 
 const Projects = () => {
   const projects = [
+    // ... your projects array
     {
       title: "E-commerce Platform",
       description: "Full-featured online store with payment integration",
@@ -90,7 +91,7 @@ const Projects = () => {
           className="text-5xl font-bold mb-12 text-center md:text-left"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: "-50px 0px" }} // Adjusted margin
           transition={{ duration: 0.6 }}
         >
           My Work
@@ -103,7 +104,8 @@ const Projects = () => {
               className="relative"
               initial="hidden"
               whileInView="show"
-              viewport={{ once: true, margin: "-100px" }}
+              // The most important fix: A less aggressive viewport margin
+              viewport={{ once: true, margin: "-50px 0px" }}
               variants={container}
             >
               <motion.div
@@ -137,7 +139,8 @@ const Projects = () => {
                       alt={project.title}
                       width={800}
                       height={500}
-                      priority={projectIndex < 2}
+                      priority={projectIndex < 1} // Only prioritize the very first image
+                      sizes="(max-width: 768px) 100vw, 50vw"
                       className="brightness-100 hover:brightness-75 
                                  transition-transform duration-500 ease-out 
                                  group-hover:scale-110"
@@ -159,10 +162,10 @@ const Projects = () => {
                 {project.image && (
                   <motion.span
                     className="absolute h-1 bg-white left-1/2 transform -translate-x-1/2"
-                    style={{ bottom: "-12px" }} 
+                    style={{ bottom: "-12px" }}
                     initial={{ width: 0 }}
-                    whileInView={{ width: "100%" }} // CHG: "80%" to "100%"
-                    viewport={{ once: true, amount: 0.8 }} 
+                    whileInView={{ width: "100%" }}
+                    viewport={{ once: true, amount: 0.8 }}
                     transition={{ duration: 1, ease: "easeInOut" }}
                   />
                 )}
@@ -198,7 +201,7 @@ const Projects = () => {
 
                 <motion.div
                   className="absolute bottom-8 sm:bottom-6 right-6 flex gap-3 md:gap-4 transition-all duration-300"
-                  variants={item} // Changed from container to item for individual animation
+                  variants={item}
                 >
                   {project.techIcons.map((icon, index) => (
                     <motion.div
@@ -207,7 +210,7 @@ const Projects = () => {
                                 translate-y-10 opacity-0 group-hover:translate-y-0 
                                 group-hover:opacity-100"
                       style={{ transitionDelay: `${index * 100}ms` }}
-                      variants={item} 
+                      variants={item}
                     >
                       <Image
                         src={icon.src}
