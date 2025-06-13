@@ -18,8 +18,9 @@ const Hero = () => {
 
   // Close dropdown when clicking outside
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownOpen && !event.target.closest('.dropdown-container')) {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Element;
+      if (dropdownOpen && !target.closest('.dropdown-container')) {
         setDropdownOpen(false);
       }
     };
